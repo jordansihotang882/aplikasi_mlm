@@ -52,8 +52,7 @@ class Admin extends CI_Controller  {
 
 	public function update($id)
 	{
-		$belum_aktif = $this->db->query("SELECT * FROM tb_pelanggan WHERE status='belum_aktif' ");
-		$data['belum_aktif']=$belum_aktif->num_rows();
+	
 		$where= array('id_admin' => $id);
 		$data['admin'] = $this->db->query("select * from tb_admin where id_admin='$id'")->result();
 		  $this->load->view('templates_admin/header');
